@@ -31,13 +31,13 @@ function handleSearchInput(e) {
         return Notify.info('Too many matches found. Please enter a more specific name.');
       }
 
-      if (countrys.length > 2 && countrys.length <= 10) {
+      if (countrys.length >= 2 && countrys.length <= 10) {
         const list = countrys.map(country => renderList(country));
         refs.countryList.innerHTML = list.join(' ');
         return (refs.countryInfo.innerHTML = '');
       }
 
-      if ((countrys.length = 1)) {
+      if (countrys.length === 1) {
         const info = countrys.map(country => renderCounrty(country));
         refs.countryInfo.innerHTML = info.join(' ');
         refs.countryList.innerHTML = '';
